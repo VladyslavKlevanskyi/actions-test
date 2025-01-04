@@ -20,10 +20,10 @@ class TestCalcScenarios:
     VALIDATION_SCENARIOS = [
         (data[0]["num1"], data[0]["num2"], "mult", data[0]["mult_result"]),
         (data[1]["num1"], data[1]["num2"], "mult", data[1]["mult_result"]),
-        (data[2]["num1"], data[2]["num2"], "mult", data[2]["mult_result"]),
+        (data[1]["num1"], data[2]["num2"], "mult", data[2]["mult_result"]),
         (data[0]["num1"], data[0]["num2"], "sum", data[0]["sum_result"]),
         (data[1]["num1"], data[1]["num2"], "sum", data[1]["sum_result"]),
-        (data[2]["num1"], data[2]["num2"], "sum", data[2]["sum_result"]),
+        (data[1]["num1"], data[2]["num2"], "sum", data[2]["sum_result"]),
     ]
 
     @pytest.mark.parametrize(
