@@ -10,20 +10,26 @@ data = [
 
 class TestCalcScenarios:
     IDS = [
-        f"Test that multiplying the numbers {data[0]['num1']} and {data[0]['num2']} will be {data[0]['mult_result']}",
-        f"Test that multiplying the numbers {data[1]['num1']} and {data[1]['num2']} will be {data[1]['mult_result']}",
-        f"Test that multiplying the numbers {data[2]['num1']} and {data[2]['num2']} will be {data[2]['mult_result']}",
-        f"Test that sum of numbers {data[0]['num1']} and {data[0]['num2']} will be {data[0]['sum_result']}",
-        f"Test that sum of numbers {data[1]['num1']} and {data[1]['num2']} will be {data[1]['sum_result']}",
-        f"Test that sum of numbers {data[2]['num1']} and {data[2]['num2']} will be {data[2]['sum_result']}",
+        f"Test that multiplying the numbers {data[0]['num1']}"
+        f" and {data[0]['num2']} will be {data[0]['mult_result']}",
+        f"Test that multiplying the numbers {data[1]['num1']}"
+        f" and {data[1]['num2']} will be {data[1]['mult_result']}",
+        f"Test that multiplying the numbers {data[2]['num1']}"
+        f" and {data[2]['num2']} will be {data[2]['mult_result']}",
+        f"Test that sum of numbers {data[0]['num1']}"
+        f" and {data[0]['num2']} will be {data[0]['sum_result']}",
+        f"Test that sum of numbers {data[1]['num1']}"
+        f" and {data[1]['num2']} will be {data[1]['sum_result']}",
+        f"Test that sum of numbers {data[2]['num1']}"
+        f" and {data[2]['num2']} will be {data[2]['sum_result']}",
     ]
     VALIDATION_SCENARIOS = [
         (data[0]["num1"], data[0]["num2"], "mult", data[0]["mult_result"]),
         (data[1]["num1"], data[1]["num2"], "mult", data[1]["mult_result"]),
-        (data[1]["num1"], data[2]["num2"], "mult", data[2]["mult_result"]),
+        (data[2]["num1"], data[2]["num2"], "mult", data[2]["mult_result"]),
         (data[0]["num1"], data[0]["num2"], "sum", data[0]["sum_result"]),
         (data[1]["num1"], data[1]["num2"], "sum", data[1]["sum_result"]),
-        (data[1]["num1"], data[2]["num2"], "sum", data[2]["sum_result"]),
+        (data[2]["num1"], data[2]["num2"], "sum", data[2]["sum_result"]),
     ]
 
     @pytest.mark.parametrize(
