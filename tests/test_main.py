@@ -29,6 +29,7 @@ data = [
 ]
 
 
+@pytest.mark.smoke
 class TestSumMultScenarios:
     IDS = [
         f"Test that multiplying the numbers {data[0]['num1']}"

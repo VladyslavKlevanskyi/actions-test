@@ -1,12 +1,16 @@
 name: Run Python Tests
 
 on:
-  push:
-    branches:
-      - develop  # Run tests when push to develop branch
-  pull_request:
-    branches:
-      - main  # Run tests when pull request to main branch
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose tests set
+        required: true
+        default: smoke
+        type: choice
+        options:
+          - all
+          - smoke
 
 jobs:
   test:
@@ -29,6 +33,10 @@ jobs:
     - name: Run flake8
       run: flake8
 
-    - name: Run tests
-      run: |
-        pytest
+    - name: Run all tests
+      if: "github.event.inputs.deployment_target == 'all'"
+      run: pytest
+
+    - name: Run smoke tests
+      if: "github.event.inputs.deployment_target == 'smoke'"
+      run: pytest -m smoke
