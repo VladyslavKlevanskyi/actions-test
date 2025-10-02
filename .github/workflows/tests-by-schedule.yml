@@ -2,7 +2,7 @@ name: Run Python Tests by Schedule
 
 on:
   schedule:  # Add scheduled trigger
-    - cron: '05 20 * * *'    # This will run at 00:00 UTC every day
+    - cron: "20 20 * * *"    # This will run at 20:20 UTC every day
 
 jobs:
   test:
