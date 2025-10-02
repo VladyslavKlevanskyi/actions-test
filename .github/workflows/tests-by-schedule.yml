@@ -1,16 +1,8 @@
-name: Run Python Tests by Button
+name: Run Python Tests by Schedule
 
 on:
-  workflow_dispatch:
-    inputs:
-      deployment_target:
-        description: Choose tests set
-        required: true
-        default: smoke
-        type: choice
-        options:
-          - all
-          - smoke
+  schedule:  # Add scheduled trigger
+    - cron: '05 20 * * *'    # This will run at 00:00 UTC every day
 
 jobs:
   test:
@@ -34,11 +26,4 @@ jobs:
       run: flake8
 
     - name: Run all tests
-      if: "github.event.inputs.deployment_target == 'all'"
-      run: pytest
-      continue-on-error: true
-
-    - name: Run smoke tests
-      if: "github.event.inputs.deployment_target == 'smoke'"
-      run: pytest -m smoke
-      continue-on-error: true
+      run: pytest -v
