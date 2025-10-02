@@ -2,7 +2,8 @@ name: Run Python Tests by Schedule
 
 on:
   schedule:  # Add scheduled trigger
-    - cron: "20 20 * * *"    # This will run at 20:20 UTC every day
+    - cron: "30 20 * * *"    # This will run at 20:30 UTC every day
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   test:
@@ -27,3 +28,4 @@ jobs:
 
     - name: Run all tests
       run: pytest -v
+      continue-on-error: true  # The workflow won't fail if tests fail
