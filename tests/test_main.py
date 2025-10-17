@@ -143,7 +143,11 @@ class TestSumMultNegativeScenarios:
             negative_data[1]["num2"],
             "sum", negative_data[1]["sum_result"]
         ),
-        (negative_data[2]["num1"], negative_data[2]["num2"], "sum", negative_data[2]["sum_result"]),
+        (
+            negative_data[2]["num1"],
+            negative_data[2]["num2"],
+            "sum", negative_data[2]["sum_result"]
+        ),
     ]
 
     @pytest.mark.parametrize(
