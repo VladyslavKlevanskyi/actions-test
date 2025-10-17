@@ -59,6 +59,12 @@ negative_data = [
 
 @pytest.mark.smoke
 class TestSumMultPositiveScenarios:
+    """
+    Contains positive test scenarios for the `add_or_mult` function.
+    These tests validate that the addition and multiplication operations
+    return the correct expected results for a variety of valid input pairs.
+    """
+
     IDS = [
         f"Test that multiplying the numbers {data[0]['num1']}"
         f" and {data[0]['num2']} will be {data[0]['mult_result']}",
@@ -97,6 +103,13 @@ class TestSumMultPositiveScenarios:
 
 @pytest.mark.smoke
 class TestSumMultNegativeScenarios:
+    """
+    Contains negative test scenarios for the `add_or_mult` function.
+    These tests ensure that incorrect or unexpected results are properly
+    detected and do not pass validation for addition and multiplication
+    operations.
+    """
+
     IDS = [
         f"Test that multiplying the numbers {negative_data[0]['num1']}"
         f" and {negative_data[0]['num2']}"
@@ -164,6 +177,12 @@ class TestSumMultNegativeScenarios:
 
 
 class TestSubDivScenarios:
+    """
+    Contains test scenarios for the `sub_or_div` function.
+    These tests verify that subtraction and integer division operations
+    return correct and expected values for given input pairs.
+    """
+
     IDS = [
         f"Test that dividing the numbers {data[0]['num1']}"
         f" and {data[0]['num2']} will be {data[0]['div_result']}",
